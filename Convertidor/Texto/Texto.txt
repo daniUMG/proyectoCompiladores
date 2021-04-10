@@ -1,0 +1,10 @@
+$LenguajeH$
+$CabezaH$
+$/CabezaH$
+$CuerpoH$
+$Parrafo$ Hola mundo $/Parrafo$
+$Parrafo$ Hola mundo2 $/Parrafo$
+$Parrafo$ Hola mundo3 $/Parrafo$
+$hola$
+$/CuerpoH$
+$/LenguajeH$

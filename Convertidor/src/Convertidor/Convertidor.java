@@ -4,20 +4,23 @@ package Convertidor;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+import java.awt.event.*;
+import java.awt.*;
+import javax.swing.*;
 
 public class Convertidor {
 
    
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         
         
          String ruta;
         ruta = new File ("").getAbsolutePath (); //ruta inicial del directorio 
+        FileWriter fichero= new FileWriter(ruta+"\\Texto\\index.html");
         ruta = ruta+"\\Texto\\Texto.txt";        // direccion del archivo 
         
         //System.out.print(ruta); //Mostrara la ruta donde esta ubicado
@@ -209,30 +212,12 @@ public class Convertidor {
                             }
                              
                    i++;  //contador
-                     
                 }
-            
-            System.out.println(resultado);
-            
-            // Condicional IF que crea el archivo HTML, si no existen errores
-            if(countErrors >= 1) {
-                String rutanewFile;
-                rutanewFile = new File ("").getAbsolutePath (); //ruta inicial del directorio 
-                rutanewFile = rutanewFile+"\\Texto\\filename.html";
-                String contenido = resultado;
-                File file = new File(rutanewFile);
-                // Si el archivo no existe es creado
-                if (!file.exists()) {
-                    file.createNewFile();
-                }
-                FileWriter fw = new FileWriter(file);
-                BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(contenido);
-                bw.close();
-            }
+                //System.out.println(resultado);
+                JOptionPane.showMessageDialog(null, resultado);
         }catch (Exception ex){}
        
-        
+        fichero.close();
         
         
         /*
